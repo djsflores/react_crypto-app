@@ -4,5 +4,5 @@ const App = () => {
       Cripto Tuc
     </>
   );
-}
+};
 export default App;
