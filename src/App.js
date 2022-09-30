@@ -4,6 +4,7 @@ import Detail from './pages/Detail/Detail';
 import Error from './pages/Error/Error';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
+import { setCoin } from './app/coinProviderRedux';
 
 const App = () => {
   return (

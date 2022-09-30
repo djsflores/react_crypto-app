@@ -5,7 +5,7 @@ import CoinHistory from '../../components/CoinHistory/CoinHistory';
 const Detail = () => {
   const { state } = useLocation();
   const { coinId } = state;
-  console.log('id recibido: ', coinId);
+  // console.log('id recibido: ', coinId);
   return (
     <>
     <div>Detail</div>

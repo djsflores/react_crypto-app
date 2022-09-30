@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { Line } from 'react-chartjs-2';
 import {
@@ -14,7 +15,11 @@ import {
 import useFetch from '../../hooks/useFetch/useFetch';
 
 const CoinHistory = ({ idCoin }) => {
-  const moneda = useFetch(`https://api.coincap.io/v2/assets/${idCoin}/history?interval=h1`);
+  const dataRedux = useSelector((state) => state);
+  // console.log('redux (history): ', dataRedux);
+  // console.log('redux (history): ', dataRedux.coin.results);
+  // const moneda = useFetch(`https://api.coincap.io/v2/assets/${idCoin}/history?interval=h1`);
+  const moneda = useFetch(`https://api.coincap.io/v2/assets/${dataRedux.coin.results}/history?interval=h1`);
   ChartJS.register(
     CategoryScale,
     LinearScale,
