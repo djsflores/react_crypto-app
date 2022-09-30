@@ -7,3 +7,9 @@
 .tbl-header{
   color: gold;
 }
+.tbl-cell-red{
+  color: red;
+}
+.tbl-cell-green{
+  color: rgb(14, 203, 129);
+}
