@@ -1,10 +1,16 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import './coinTable.css';
+import { setCoin } from '../../app/coinProviderRedux';
 
 const CoinTable = ({ currentItems }) => {
+  // const dataRedux = useSelector((state) => state);
+  const dispatch = useDispatch();
+  // console.log('redux (table): ', dataRedux);
   const navigate = useNavigate();
   const handleClick = (id) => {
+    dispatch(setCoin(id));
     navigate('/detail', { state: { coinId: id } });
   };
   const numberWithCommas = (decimalNumber) => {
