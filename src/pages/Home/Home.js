@@ -4,7 +4,6 @@ import { CoinPagination } from '../../components/CoinPagination';
 const Home = () => {
   return (
     <>
-      <div>Home</div>
       <CoinPagination />
     </>
   );
