@@ -1,23 +1,21 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import './coinTable.css';
 import { setCoin } from '../../app/coinProviderRedux';
 
 const CoinTable = ({ currentItems }) => {
-  // const dataRedux = useSelector((state) => state);
   const dispatch = useDispatch();
-  // console.log('redux (table): ', dataRedux);
   const navigate = useNavigate();
   const handleClick = (id) => {
     dispatch(setCoin(id));
-    navigate('/detail', { state: { coinId: id } });
+    navigate('/detail');
   };
   const numberWithCommas = (decimalNumber) => {
     return decimalNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
   return (
-    <table className='table table-dark table-hover'>
+    <table className='table table-dark table-hover' data-testid='table-test'>
       <thead className='tbl-header'>
         <tr>
           <th scope="col">#</th>

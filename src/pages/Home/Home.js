@@ -3,9 +3,9 @@ import { CoinPagination } from '../../components/CoinPagination';
 
 const Home = () => {
   return (
-    <>
+    <div data-testid='home-test'>
       <CoinPagination />
-    </>
+    </div>
   );
 };
 

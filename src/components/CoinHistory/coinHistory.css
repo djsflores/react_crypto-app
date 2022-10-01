@@ -1,0 +1,8 @@
+.btn-back{
+  background-color: #313131 ;
+  border-color: #313131 ;
+  color: gold;
+}
+.btn-back:hover{
+  color: gold;
+}

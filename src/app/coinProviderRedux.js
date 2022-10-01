@@ -5,12 +5,10 @@ const coinSlice = createSlice({
   initialState: {},
   reducers: {
     setCoin(state, action) {
-      // console.log('action: ', action);
+      console.log('action: ', action);
       state.results = action.payload;
     },
   },
 });
-// para el dispatch
 export const { setCoin } = coinSlice.actions;
-// para el configure
 export default coinSlice.reducer;
