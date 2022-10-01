@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 import CoinTable from '../CoinTable/CoinTable';
 import useFetch from '../../hooks/useFetch/useFetch';
@@ -14,15 +13,15 @@ const CoinPagination = () => {
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % monedas.data.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`,
-    );
+    // console.log(
+    //   `User requested page number ${event.selected}, which is offset ${newOffset}`,
+    // );
     setItemOffset(newOffset);
   };
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(monedas.data?.slice(itemOffset, endOffset));
     if (monedas !== null && monedas.data !== null) {
       setPageCount(Math.ceil(monedas.data.length / itemsPerPage));
@@ -30,7 +29,7 @@ const CoinPagination = () => {
   }, [itemOffset, itemsPerPage, monedas.data]);
 
   return (
-    <>
+    <div data-testid='pagination-test'>
       <CoinTable currentItems={currentItems} />
       <ReactPaginate
         previousLabel={'< prev'}
@@ -46,7 +45,7 @@ const CoinPagination = () => {
         activeClassName={'active'}
         renderOnZeroPageCount={null}
       />
-    </>
+    </div>
   );
 };
 
