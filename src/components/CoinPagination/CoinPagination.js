@@ -13,15 +13,11 @@ const CoinPagination = () => {
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % monedas.data.length;
-    // console.log(
-    //   `User requested page number ${event.selected}, which is offset ${newOffset}`,
-    // );
     setItemOffset(newOffset);
   };
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(monedas.data?.slice(itemOffset, endOffset));
     if (monedas !== null && monedas.data !== null) {
       setPageCount(Math.ceil(monedas.data.length / itemsPerPage));
