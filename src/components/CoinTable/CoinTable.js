@@ -26,10 +26,10 @@ const CoinTable = ({ currentItems }) => {
         </tr>
       </thead>
       <tbody>
-        {currentItems
-          && currentItems?.map((item) => {
-            const profit = item.price_change_percentage_24h > 0;
-            return (
+        {/* {currentItems && currentItems?.map((item) => { */}
+        {Array.isArray(currentItems) && currentItems?.map((item) => {
+          const profit = item.price_change_percentage_24h > 0;
+          return (
             <tr key={item.id} onClick={ () => handleClick(item.id)}>
               <th scope="row">{item.market_cap_rank}</th>
               <td><img className='coin-logo' src={item.image}/> {item.name} <span className='coin-symbol'>{item.symbol.toUpperCase()}</span></td>
@@ -37,7 +37,7 @@ const CoinTable = ({ currentItems }) => {
               <td className={ profit > 0 ? 'tbl-cell-green' : 'tbl-cell-red'}>{profit && '+'} {item.price_change_percentage_24h.toFixed(2)}%</td>
               <td>{numberWithCommas(item.market_cap.toString().slice(0, -6))} M</td>
             </tr>);
-          })}
+        })}
       </tbody>
     </table>
   );
