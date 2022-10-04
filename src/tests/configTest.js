@@ -2,16 +2,13 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import ReduxProvider from '../app/coinProviderRedux';
-// import RouterProvider from './app/coinProviderRedux';
 
 afterAll(() => jest.clearAllMocks());
 
 const AllTheProviders = ({ children }) => {
   return (
     <ReduxProvider>
-      {/* <RouterProvider> */}
         {children}
-      {/* </RouterProvider> */}
     </ReduxProvider>
   );
 };

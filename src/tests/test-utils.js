@@ -2,8 +2,6 @@ import React from 'react';
 import { render as rtlRender } from '@testing-library/react';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-
-// As a basic setup, import your same slice reducers
 import userReducer from '../app/coinProviderRedux';
 
 function render(
