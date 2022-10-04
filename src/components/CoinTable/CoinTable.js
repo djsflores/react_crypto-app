@@ -26,7 +26,6 @@ const CoinTable = ({ currentItems }) => {
         </tr>
       </thead>
       <tbody>
-        {/* {currentItems && currentItems?.map((item) => { */}
         {Array.isArray(currentItems) && currentItems?.map((item) => {
           const profit = item.price_change_percentage_24h > 0;
           return (
